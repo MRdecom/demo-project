@@ -1,1 +1,1 @@
-export {default as ItemRateInput} from './ItemRateInput';
+export { default as ItemRateInput } from './ItemRateInput'

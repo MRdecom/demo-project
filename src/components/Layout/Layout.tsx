@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import Header from "./Header/Header";
-import SideBar from "./SideBar/SideBar";
+import React, { useEffect, useState } from 'react'
+import Header from './Header/Header'
+import SideBar from './SideBar/SideBar'
 
 type LayoutProp = {
     children: React.ReactNode
 }
 
-const Layout = ({children}: LayoutProp) =>{
-    const [userName,setUserName] = useState('');
+const Layout = ({ children }: LayoutProp) => {
+  const [userName, setUserName] = useState('')
 
-    useEffect(()=>{
+  useEffect(() => {
+    setUserName('user user')
+  }, [])
 
-    },[])
-
-    return (
+  return (
         <div className='layout'>
             <Header pageTitle='Demo Project' userName={userName} userRole='admin'/>
             <div className='layout-items'>
@@ -24,7 +24,7 @@ const Layout = ({children}: LayoutProp) =>{
             </div>
 
         </div>
-    )
+  )
 }
 
-export default Layout;
+export default Layout

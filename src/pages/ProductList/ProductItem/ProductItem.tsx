@@ -1,28 +1,30 @@
-import React, {useEffect} from 'react';
-import {ItemRateInput} from "../../../components";
-import {ProductImg} from "./ProductImg";
-import {ProductInfo} from "./ProductInfo";
+import React from 'react'
+import { ItemRateInput } from '../../../components'
+import { ProductImg } from './ProductImg'
+import { ProductInfo } from './ProductInfo'
+import { useHistory } from 'react-router-dom'
+import { pageUrls } from '../../../constants/pageUrls'
 
-type ProductItemProps = {
-    name?: string,
-    price?: string,
-    img?: string,
-    rating?: string,
+export type ProductItemProps = {
+    name: string,
+    price: string,
+    img: string,
+    rating: number,
+    id: string
 }
-// TODO: proplar bağlanacak.
 
-const ProductItem = ({name,img,price,rating}:ProductItemProps) =>{
-    useEffect(()=>{
-
-    },[])
-
-    return (
-        <div className='product-item-component'>
+const ProductItem = ({ name, img, price, rating, id }:ProductItemProps) => {
+  const history = useHistory()
+  const openDetail = () => {
+    history.push(pageUrls.detailWithoutId + id)
+  }
+  return (
+        <div className='product-item-component' onClick={openDetail}>
             <ProductImg src={img}/>
-            <ProductInfo name='Item NameItem NameItem NameItem NameItem NameItem NameItem Name' price='32$'/>
-            <ItemRateInput rating={Math.floor(Math.random() * 5) + 1} withDigits readonly/>
+            <ProductInfo name={name} price={price}/>
+            <ItemRateInput rating={rating} withDigits readonly/>
         </div>
-    )
+  )
 }
 
-export default ProductItem;
+export default ProductItem

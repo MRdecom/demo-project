@@ -1,15 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react'
 
-const DashboardPage = () =>{
-    useEffect(()=>{
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-
-    return (
+const DashboardPage = () => {
+  return (
         <div className='dashboard-page'>
             Home page
         </div>
-    )
+  )
 }
 
-export default DashboardPage;
+export default DashboardPage

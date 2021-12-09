@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 type ImageProps = {
     src: string,
@@ -6,12 +6,12 @@ type ImageProps = {
     className?: string
 }
 
-const ProductImage = ({src, alt='', className=''}: ImageProps) =>{
-    return (
+const ProductImage = ({ src, alt = '', className = '' }: ImageProps) => {
+  return (
         <div className={`product-image-component ${className}`}>
             <img src={src} alt={alt}/>
         </div>
-    )
+  )
 }
 
-export default ProductImage;
+export default ProductImage

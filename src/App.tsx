@@ -1,24 +1,31 @@
-import React, {useEffect} from 'react';
-import './App.scss';
+// eslint-disable-next-line no-use-before-define
+import React, { useEffect } from 'react'
+import './App.scss'
 import {
   Router,
   Switch,
   Route
-} from "react-router-dom";
-import history from "./history";
-import {accessToken} from "./constants/constants";
-import {LoginPage, DashboardPage, ProductList, ProductDetail} from "./pages";
-import {Layout, PrivateRoute} from "./components";
-import {pageUrls} from "./constants/pageUrls";
+} from 'react-router-dom'
+import history from './history'
+import { accessToken } from './constants/constants'
+import { LoginPage, DashboardPage, ProductList, ProductDetail } from './pages'
+import { Layout, PrivateRoute } from './components'
+import { pageUrls } from './constants/pageUrls'
+import { products } from './dummies/productData'
 
-function App() {
-  useEffect(()=> {
-    const token = localStorage.getItem(accessToken);
-    if(token){
+function App () {
+  const setDummyDataToStorage = () => {
+    // TODO: varsa yenisini ekleme
+    localStorage.setItem('products', JSON.stringify(products))
+  }
 
+  useEffect(() => {
+    setDummyDataToStorage()
+    const token = localStorage.getItem(accessToken)
+    if (token) {
+      console.log(token)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  }, [])
 
   return (
       <div className="App">
@@ -33,7 +40,7 @@ function App() {
           </Switch>
         </Router>
       </div>
-  );
+  )
 }
 
-export default App;
+export default App

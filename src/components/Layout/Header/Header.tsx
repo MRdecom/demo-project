@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 type HeaderProp = {
     className?:string,
@@ -7,8 +7,8 @@ type HeaderProp = {
     userRole?:string
 }
 
-const Header = ({className='',pageTitle ,userName ,userRole}:HeaderProp) =>{
-    return (
+const Header = ({ className = '', pageTitle, userName, userRole }:HeaderProp) => {
+  return (
         <div className='header'>
             <p className={`page-title ${className}`}>{pageTitle}</p>
             <div className='user-info-block'>
@@ -16,7 +16,7 @@ const Header = ({className='',pageTitle ,userName ,userRole}:HeaderProp) =>{
                 <p className='user-role'>{userRole}</p>
             </div>
         </div>
-    )
+  )
 }
 
-export default Header;
+export default Header

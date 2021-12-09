@@ -1,25 +1,26 @@
-import React, {useEffect} from 'react';
-import ProductItem from "./ProductItem/ProductItem";
+import React, { useEffect, useState } from 'react'
+import ProductItem from './ProductItem/ProductItem'
+import { getProductList } from './actions'
+import { ProductData } from '../../types/ProductData'
 
-const ProductList = () =>{
-    useEffect(()=>{
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+const ProductList = () => {
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    // TODO: any yerine ne gelcek
+    // TODO: Data çekme
+    const data:any = getProductList()
+    setProducts(data)
+  }, [])
 
-    return (
+  return (
         <div className='product-list-page'>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
-            <ProductItem/>
+            { products &&
+                products.map((pr:ProductData) => {
+                  return <ProductItem id={pr.id} rating={pr.averageRate} name={pr.name} img={pr.icon} price={`${pr.price}${pr.currency}`} key={pr.id}/>
+                })
+            }
         </div>
-    )
+  )
 }
 
-export default ProductList;
+export default ProductList

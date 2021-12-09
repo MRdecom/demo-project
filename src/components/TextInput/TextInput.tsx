@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 type TextInputProp = {
     placeholder?: string,
@@ -11,15 +11,17 @@ type TextInputProp = {
     label: string,
 }
 
-const TextInput = ({placeholder,
-                       onClick,
-                       onChange,
-                       type='input',
-                       className='',
-                       labelClassName='',
-                       containerClassName='',
-                       label}:TextInputProp) =>{
-    return (
+const TextInput = ({
+  placeholder,
+  onClick,
+  onChange,
+  type = 'input',
+  className = '',
+  labelClassName = '',
+  containerClassName = '',
+  label
+}:TextInputProp) => {
+  return (
         <div className={`text-input-container ${containerClassName}`}>
             <p className={`label ${labelClassName}`}>{label}</p>
             <input className={`text-input ${className}`}
@@ -30,7 +32,7 @@ const TextInput = ({placeholder,
             />
         </div>
 
-    )
+  )
 }
 
-export default TextInput;
+export default TextInput

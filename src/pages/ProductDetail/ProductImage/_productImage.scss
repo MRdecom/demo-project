@@ -2,9 +2,11 @@
   max-width: 600px;
   min-width: 300px;
   margin-right: 30px;
+  max-height: 600px;
 
   img{
     max-width: inherit;
     min-width: inherit;
+    max-height: inherit;
   }
 }

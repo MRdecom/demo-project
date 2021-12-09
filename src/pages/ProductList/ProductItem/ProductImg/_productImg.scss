@@ -1,0 +1,12 @@
+.product-img{
+  width: 40px;
+  height: 40px;
+  display: block;
+
+  img{
+    width: inherit;
+    height: inherit;
+    display: inherit;
+    border-radius: 50%;
+  }
+}

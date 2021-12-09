@@ -1,0 +1,14 @@
+@import './SideBar/sideBar';
+@import './Header/header';
+.layout{
+  height:100%;
+  .layout-items{
+    display: flex;
+    height: calc(100% - 60px);
+  }
+  .content-block{
+    padding: 16px 32px;
+    width: 99%;
+    overflow: auto;
+  }
+}

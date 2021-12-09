@@ -1,0 +1,32 @@
+.header{
+  height: 60px;
+  width: 100%;
+  background: rgb(229, 84, 40);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 16px;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(255, 60, 0, 0.37), 0 6px 20px 0 rgba(236, 216, 216, 0.26);
+
+  .page-title{
+    font-size: 20px;
+    display: inline;
+  }
+  .user-info-block{
+    display: flex;
+    flex-direction: column;
+    .user-name,.user-role {
+      display: inline;
+      margin:0;
+    }
+    .user-name{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .user-role{
+      font-size: 10px;
+    }
+  }
+}

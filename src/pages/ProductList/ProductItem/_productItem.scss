@@ -1,0 +1,13 @@
+@import './ProductInfo/productInfo';
+@import './ProductImg/productImg';
+.product-item-component{
+  border-radius: 4px;
+  padding: 16px;
+  background: rgba(229, 84, 40, 0.02);
+  height: 150px;
+  width: 260px;
+  min-width: 200px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}

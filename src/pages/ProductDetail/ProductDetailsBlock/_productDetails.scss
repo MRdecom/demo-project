@@ -1,0 +1,17 @@
+.product-details-component{
+  width: 100%;
+  max-width: 900px;
+  margin-right: 30px;
+  max-height: 600px;
+  overflow: auto;
+  span{
+    font-weight: bold;
+  }
+  .rating-count{
+    font-weight: normal;
+  }
+  .description-block{
+    max-height: 300px;
+    overflow: auto;
+  }
+}

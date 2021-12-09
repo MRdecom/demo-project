@@ -1,0 +1,10 @@
+.product-image-component{
+  max-width: 600px;
+  min-width: 300px;
+  margin-right: 30px;
+
+  img{
+    max-width: inherit;
+    min-width: inherit;
+  }
+}

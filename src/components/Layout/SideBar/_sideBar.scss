@@ -1,0 +1,20 @@
+.side-bar{
+  height: 100%;
+  width: 200px;
+  border-right: 2px solid rgb(229, 84, 40);
+  .side-bar-link{
+    text-decoration: unset;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #E55428;
+    display: block;
+    background: rgba(229, 84, 40, 0.02);
+    padding:16px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .selected{
+    background: rgba(229, 84, 40, 0.2);
+  }
+}

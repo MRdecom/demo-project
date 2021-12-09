@@ -1,0 +1,48 @@
+.item-rate-input-component{
+  position: relative;
+  .big, .small{
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+
+    }
+    .on {
+      color: #e55428;
+    }
+    .off {
+      color: #ccc;
+    }
+    .rating-count{
+      text-align: center;
+      display: inline-block;
+    }
+  }
+  .big{
+    width: 140px;
+    height: 40px;
+    padding: 4px;
+    font-size: 24px;
+    button {
+      font-size: 24px;
+    }
+    .rating-count{
+      width: 40px;
+    }
+  }
+  .small{
+    width: 70px;
+    height: 20px;
+    padding: 2px;
+    font-size: 12px;
+    button{
+      font-size: 12px;
+    }
+    .rating-count{
+      width: 20px;
+    }
+  }
+
+}

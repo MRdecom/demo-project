@@ -26,7 +26,7 @@ const ItemRateInput = ({ withDigits, className, onChange, big, rating = 0, reado
   return (
         <div className={`item-rate-input-component ${className || ''}`}>
             {
-                rating &&
+                rating > 0 &&
                 <div className={big ? 'big' : 'small'}>
                     {[...Array(5)].map((star, index) => {
                       index += 1

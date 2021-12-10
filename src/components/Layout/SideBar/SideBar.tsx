@@ -1,11 +1,20 @@
-import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useMemo, useState } from 'react'
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import { pageUrls } from '../../../constants/pageUrls'
+import { accessToken } from '../../../constants/constants'
 const SideBar = () => {
   const history = useHistory()
+  const location = useLocation()
   const [selectedLink, setSelectedLink] = useState(0)
+
+  useMemo(() => {
+    if (location.pathname === pageUrls.home) setSelectedLink(0)
+    if (location.pathname === pageUrls.list) setSelectedLink(1)
+  }, [location])
+
   const signOutUser = async () => {
-    history.push('/Login')
+    history.push(pageUrls.login)
+    localStorage.setItem(accessToken, '')
   }
   return (
         <div className='side-bar'>

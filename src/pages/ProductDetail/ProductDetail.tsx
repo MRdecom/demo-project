@@ -1,10 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { ProductImage } from './ProductImage'
 import { ProductDetails } from './ProductDetailsBlock'
-import { CommentItem, ItemRateInput, TabMenu } from '../../components'
+import { ItemRateInput, TabMenu } from '../../components'
 import { useTabs, TabPanel } from 'react-headless-tabs'
-import CommentInput from '../../components/CommentInput/CommentInput'
-import Button from '../../components/Button/Button'
 import { getProductById } from './actions'
 import { useHistory, useParams } from 'react-router-dom'
 import { pageUrls } from '../../constants/pageUrls'
@@ -12,6 +10,7 @@ import { ProductData } from '../../types/ProductData'
 import { Comment } from '../../types/CommentItemType'
 import { dateFormat } from '../../utils/utils'
 import commentStore, { useComment } from '../../store/comment'
+import { CommentAndRateBlock } from './CommentAndRateBlock'
 
 const tabList = ['Details', 'Comments and Rates']
 
@@ -80,17 +79,13 @@ const ProductDetail = () => {
                                 price={+product.price}/>
                         </TabPanel>
                         <TabPanel hidden={selectedTab !== tabList[1]} className='tab-content'>
-                            {
-                                newCommentAreaOpen
-                                  ? <CommentInput productId={+id} submitComment={createComment} />
-                                  : <Button onClick={newCommentButtonHandler} buttonText={'New comment'}/>
-                            }
-                            {
-                                comments &&
-                                comments.map((com, i) => {
-                                  return <CommentItem key={i} commentDate={dateFormat(com.date)} rate={com.rate} text={com.text}/>
-                                })
-                            }
+                            <CommentAndRateBlock
+                                createComment={createComment}
+                                productId={id}
+                                comments={comments}
+                                newCommentAreaOpen={newCommentAreaOpen}
+                                newCommentButtonHandler={newCommentButtonHandler}
+                            />
                         </TabPanel>
                     </div>
                 </div>

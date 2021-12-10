@@ -58,7 +58,7 @@ export const products = [
     currency: '$',
     totalCommentNum: '0',
     arrivalDate: 'Thu Dec 09 2021 10:11:45 GMT+0300 (GMT+03:00)',
-    averageRate: ''
+    averageRate: '0'
   },
   {
     id: '5',
@@ -74,6 +74,6 @@ export const products = [
     currency: '$',
     totalCommentNum: '0',
     arrivalDate: 'Thu Dec 09 2021 10:11:45 GMT+0300 (GMT+03:00)',
-    averageRate: ''
+    averageRate: '0'
   }
 ]

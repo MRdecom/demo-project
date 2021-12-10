@@ -22,7 +22,7 @@ const ProductItem = ({ name, img, price, rating, id }:ProductItemProps) => {
         <div className='product-item-component' onClick={openDetail}>
             <ProductImg src={img}/>
             <ProductInfo name={name} price={price}/>
-            <ItemRateInput rating={rating} withDigits readonly/>
+            <ItemRateInput rating={+rating} withDigits readonly/>
         </div>
   )
 }

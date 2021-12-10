@@ -7,7 +7,6 @@ type CommentItemProps = {
     rate: number,
     className?: string
 }
-// TODO date format ekle
 const CommentItem = ({ commentDate, text, rate, className = '' }:CommentItemProps) => {
   return (<div className={`comment-item-component ${className}`}>
         <h5>{commentDate}</h5>

@@ -23,6 +23,9 @@ const commentStore = {
     localStorage.setItem('commentData', JSON.stringify(state))
     subject.next(state)
   },
+  getComments: () => {
+    return state
+  },
   initialState
 }
 

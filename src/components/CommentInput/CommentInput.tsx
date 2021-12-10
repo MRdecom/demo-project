@@ -5,7 +5,7 @@ import { ItemRateInput } from '../ItemRateInput'
 import { Button } from '../Button'
 
 type CommentInputProps = {
-    submitComment: (d:Comment) => void,
+    submitComment: (data:Comment) => void,
     className?: string,
     productId: number
 }

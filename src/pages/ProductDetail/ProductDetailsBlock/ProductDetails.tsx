@@ -1,4 +1,5 @@
 import React from 'react'
+import { dateFormat } from '../../../utils/utils'
 
 type ProductDetailsProp = {
     name: string,
@@ -9,14 +10,13 @@ type ProductDetailsProp = {
     commentCount?: number,
     className?: string
 }
-// TODO: date formatlancak
 const ProductDetails = ({ name, description, price, currency = '$', commentCount = 0, arrivalDate, className = '' }: ProductDetailsProp) => {
   return <div className={`product-details-component ${className}`}>
         <p><span>Product Name: </span> {name}</p>
         <div className='description-block'><span>Description: </span> {description}</div>
         <p><span>Price: </span> {price.toFixed(2)}{currency}</p>
         <p><span>Total comment: </span> {commentCount}</p>
-        <p><span>Arrival Date: </span> {arrivalDate}</p>
+        <p><span>Arrival Date: </span> {dateFormat(arrivalDate)}</p>
     </div>
 }
 

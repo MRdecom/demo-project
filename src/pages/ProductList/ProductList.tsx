@@ -6,9 +6,7 @@ import { ProductData } from '../../types/ProductData'
 const ProductList = () => {
   const [products, setProducts] = useState([])
   useEffect(() => {
-    // TODO: any yerine ne gelcek
-    // TODO: Data çekme
-    const data:any = getProductList()
+    const data = getProductList()
     setProducts(data)
   }, [])
 

@@ -1,25 +1,27 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 import { RouteProps } from 'react-router'
+import { accessToken } from '../../constants/constants'
+import { pageUrls } from '../../constants/pageUrls'
 
 type Props = {
 
 } & RouteProps;
 
 const PrivateRoute: React.FC<Props> = ({ children, ...rest }) => {
-  const accessToken = true
+  const token = localStorage.getItem(accessToken)
   return (
         <Route
             {...rest}
             render={({ location }) => {
-              return accessToken
+              return token
                 ? (
                     children
                   )
                 : (
                     <Redirect
                         to={{
-                          pathname: '/Login',
+                          pathname: pageUrls.login,
                           state: { from: location }
                         }}
                     />

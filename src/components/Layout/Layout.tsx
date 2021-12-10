@@ -10,7 +10,7 @@ type LayoutProp = {
 const Layout = ({ children, userName = '' }: LayoutProp) => {
   return (
         <div className='layout'>
-            <Header pageTitle='Demo Project' userName={userName} userRole='admin'/>
+            <Header pageTitle='Demo Project' userName={userName} userRole=''/>
             <div className='layout-items'>
                 <SideBar/>
                 <div className='content-block'>

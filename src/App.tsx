@@ -4,8 +4,9 @@ import './App.scss'
 import {
   Router,
   Switch,
-  Route
-} from 'react-router-dom'
+  Route,
+  Redirect
+} from 'react-router'
 import history from './history'
 import { accessToken } from './constants/constants'
 import { LoginPage, DashboardPage, ProductList, ProductDetail } from './pages'
@@ -39,11 +40,23 @@ function App () {
         <Router history={history}>
           <Switch>
             <Route path={pageUrls.login} exact component={LoginPage} />
-            <Layout userName={userName}>
-              <PrivateRoute exact path={pageUrls.home}><DashboardPage/></PrivateRoute>
-              <PrivateRoute exact path={pageUrls.list}><ProductList/></PrivateRoute>
-              <PrivateRoute exact path={pageUrls.detail}><ProductDetail/></PrivateRoute>
-            </Layout>
+            <PrivateRoute exact path={pageUrls.home}>
+              <Layout userName={userName}>
+                <DashboardPage/>
+              </Layout>
+            </PrivateRoute>
+            <PrivateRoute exact path={pageUrls.list}>
+              <Layout userName={userName}>
+                <ProductList/>
+              </Layout>
+            </PrivateRoute>
+            <PrivateRoute exact path={pageUrls.detail}>
+              <Layout userName={userName}>
+                <ProductDetail/>
+              </Layout>
+            </PrivateRoute>
+            <Route path='/404'><div>404 not found</div></Route>
+            <Redirect to='/404' />
           </Switch>
         </Router>
       </div>
